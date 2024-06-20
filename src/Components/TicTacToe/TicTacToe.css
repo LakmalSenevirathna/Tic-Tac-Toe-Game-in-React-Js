@@ -1,0 +1,42 @@
+.container{
+    padding: 3rem 2rem;
+    margin: 1rem 1rem;
+    text-align: center;
+}
+
+.header h1{
+    color: white;
+    font-size: 4rem;
+    margin-bottom: 10px;
+}
+
+.header span{
+    color: rgb(28, 189, 167);
+}
+
+.row__1, .row__2, .row__3{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box{
+    height: 120px;
+    width: 120px;
+    background-color: rgb(5, 116, 133);
+    margin: 5px 5px;
+    border-radius: 5px;
+}
+
+.reset__button{
+    width: 140px;
+    height: 66px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    border-radius: 50px;
+    background: #2b4b5c;
+    font-size: 21px;
+    color: rgb(28, 189, 167);
+    margin-top: 25px;
+}
