@@ -10,6 +10,18 @@ const TicTacToe = () => {
   let [count, setCount] = useState(0);
   let [lock, setLock] = useState (false);
   let titleRef = useRef(null);
+  let box1 = useRef(null)
+  let box2 = useRef(null)
+  let box3 = useRef(null)
+  let box4 = useRef(null)
+  let box5 = useRef(null)
+  let box6 = useRef(null)
+  let box7 = useRef(null)
+  let box8 = useRef(null)
+  let box9 = useRef(null)
+
+  let box_array = [box1,box2,box3,box4,box5,box6,box7,box8,box9];
+
 
   const toggle = (e, num) => {
     if (lock) {
@@ -57,6 +69,15 @@ const TicTacToe = () => {
     }
   }
 
+  const reset = () => {
+    setLock(false);
+    data = ["","","","","","","","",""];
+    titleRef.current.innerHTML = 'Tic Tac Toe Game in <span>React</span>';
+    box_array.map((e)=>{
+      e.current.innerHTML = "";
+    })
+  }
+
   return (
     <div className='container'>
       <div className="header">
@@ -64,23 +85,23 @@ const TicTacToe = () => {
       </div>
       <div className="game__container">
         <div className="row__1">
-          <div className="box" onClick={(e) => {toggle(e,0)}} ></div>
-          <div className="box" onClick={(e) => {toggle(e,1)}}></div>
-          <div className="box" onClick={(e) => {toggle(e,2)}}></div>
+          <div className="box" ref={box1} onClick={(e) => {toggle(e,0)}} ></div>
+          <div className="box" ref={box2} onClick={(e) => {toggle(e,1)}}></div>
+          <div className="box" ref={box3} onClick={(e) => {toggle(e,2)}}></div>
         </div>
         <div className="row__2">
-          <div className="box" onClick={(e) => {toggle(e,3)}}></div>
-          <div className="box" onClick={(e) => {toggle(e,4)}}></div>
-          <div className="box" onClick={(e) => {toggle(e,5)}}></div>
+          <div className="box" ref={box4} onClick={(e) => {toggle(e,3)}}></div>
+          <div className="box" ref={box5} onClick={(e) => {toggle(e,4)}}></div>
+          <div className="box" ref={box6} onClick={(e) => {toggle(e,5)}}></div>
         </div>
         <div className="row__3">
-          <div className="box" onClick={(e) => {toggle(e,6)}}></div>
-          <div className="box" onClick={(e) => {toggle(e,7)}}></div>
-          <div className="box" onClick={(e) => {toggle(e,8)}}></div>
+          <div className="box" ref={box7} onClick={(e) => {toggle(e,6)}}></div>
+          <div className="box" ref={box8} onClick={(e) => {toggle(e,7)}}></div>
+          <div className="box" ref={box9} onClick={(e) => {toggle(e,8)}}></div>
         </div>
       </div>
       <div className="reset__container">
-        <button className="reset__button">Reset</button>
+        <button className="reset__button" onClick={()=>{reset()}}>Reset</button>
       </div>
     </div>
   )
