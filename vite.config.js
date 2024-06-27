@@ -4,5 +4,5 @@ import react from '@vitejs/plugin-react-swc'
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: "/tic-tac-toe-game-in-react-js/"
+  base: "/Tic-Tac-Toe-Game-in-React-Js/"
 })
